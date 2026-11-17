@@ -1,4 +1,4 @@
-# bbdigest — B站视频速览工具
+# video-digest-skill — B站视频速览工具
 
 [English](README.en.md) | 中文
 
@@ -32,17 +32,17 @@ pip install -r requirements.txt
 cp config.example.ini config.ini   # 编辑 config.ini，填入你的 SESSDATA（强烈建议）
 
 # 1. 只看视频信息和分P清单（不下载）
-python bbdigest.py info https://www.bilibili.com/video/BVxxxxxx
+python video_digest_skill.py info https://www.bilibili.com/video/BVxxxxxx
 
 # 2. 处理单P视频（转写 + 截帧一次完成）
-python bbdigest.py run https://www.bilibili.com/video/BVxxxxxx
+python video_digest_skill.py run https://www.bilibili.com/video/BVxxxxxx
 
 # 3. 分P视频：先 info 看清单，再指定处理哪几P
-python bbdigest.py run https://www.bilibili.com/video/BVxxxxxx --pages 1,3-5
-python bbdigest.py run https://www.bilibili.com/video/BVxxxxxx --pages all
+python video_digest_skill.py run https://www.bilibili.com/video/BVxxxxxx --pages 1,3-5
+python video_digest_skill.py run https://www.bilibili.com/video/BVxxxxxx --pages all
 
 # 4. URL 带 ?p=2 时只处理第2P
-python bbdigest.py run "https://www.bilibili.com/video/BVxxxxxx?p=2"
+python video_digest_skill.py run "https://www.bilibili.com/video/BVxxxxxx?p=2"
 ```
 
 支持输入：完整URL（可带 `?p=N`）、`b23.tv` 短链、裸 BV 号、av 号。

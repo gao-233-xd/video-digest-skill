@@ -1,4 +1,4 @@
-# bbdigest — Bilibili Video Digest
+# video-digest-skill — Bilibili Video Digest
 
 Turn a Bilibili link into a "fast-reading resource pack": **timestamped transcript + keyframe screenshots + AI summary**.
 No need to watch the whole video. Supports multi-part videos, b23.tv short links, and prefers official AI subtitles with a local Whisper fallback.
@@ -32,17 +32,17 @@ pip install -r requirements.txt
 cp config.example.ini config.ini   # edit config.ini and fill in SESSDATA (strongly recommended)
 
 # 1. Inspect video info and the page list (no download)
-python bbdigest.py info https://www.bilibili.com/video/BVxxxxxx
+python video_digest_skill.py info https://www.bilibili.com/video/BVxxxxxx
 
 # 2. Process a single-part video (transcript + keyframes in one go)
-python bbdigest.py run https://www.bilibili.com/video/BVxxxxxx
+python video_digest_skill.py run https://www.bilibili.com/video/BVxxxxxx
 
 # 3. Multi-part video: run info first, then choose which parts
-python bbdigest.py run https://www.bilibili.com/video/BVxxxxxx --pages 1,3-5
-python bbdigest.py run https://www.bilibili.com/video/BVxxxxxx --pages all
+python video_digest_skill.py run https://www.bilibili.com/video/BVxxxxxx --pages 1,3-5
+python video_digest_skill.py run https://www.bilibili.com/video/BVxxxxxx --pages all
 
 # 4. A URL with ?p=2 processes only part 2
-python bbdigest.py run "https://www.bilibili.com/video/BVxxxxxx?p=2"
+python video_digest_skill.py run "https://www.bilibili.com/video/BVxxxxxx?p=2"
 ```
 
 Supported inputs: full URLs (optionally with `?p=N`), `b23.tv` short links, bare BV IDs, and av IDs.

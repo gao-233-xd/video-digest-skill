@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""bbdigest — B站视频速览工具
+"""video-digest-skill — B站视频速览工具
 
 用法:
-  python bbdigest.py info <链接|BV号>
+  python video_digest_skill.py info <链接|BV号>
       只拉取视频信息和分P清单，不下载
-  python bbdigest.py run <链接|BV号> [--pages all|1,3-5] [选项]
+  python video_digest_skill.py run <链接|BV号> [--pages all|1,3-5] [选项]
       完整处理: 语音转文字 + 关键帧截图，输出到 notes/ 目录
 
 链接支持: 完整URL(可带 ?p=N)、b23.tv 短链、裸 BV号、av号
@@ -823,8 +823,8 @@ def cmd_run(args) -> None:
     if total > 1 and not args.pages and not page_hint:
         print_pages(view, vid_dir)
         log(f"该视频有 {total} 个分P。请指定要处理的分P，例如:")
-        log(f"  python bbdigest.py run {args.url} --pages 1,3-5")
-        log(f"  python bbdigest.py run {args.url} --pages all")
+        log(f"  python video_digest_skill.py run {args.url} --pages 1,3-5")
+        log(f"  python video_digest_skill.py run {args.url} --pages all")
         return
 
     if args.pages:
@@ -856,7 +856,7 @@ def cmd_run(args) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(
-        prog="bbdigest", description="B站视频速览工具: 转写文本 + 关键帧截图")
+        prog="video-digest-skill", description="B站视频速览工具: 转写文本 + 关键帧截图")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     p_info = sub.add_parser("info", help="只看视频信息/分P清单（不下载）")

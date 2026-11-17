@@ -1,20 +1,20 @@
 ---
-name: bbdigest-video-recap
+name: video-digest-skill
 description: 把B站视频链接变成"可速读的资料包"——带时间戳的文字转写+关键帧截图+深度总结。当用户丢来B站/b23.tv链接并要求提取内容、总结视频、做笔记时使用；支持分P视频、官方AI字幕优先、本地Whisper兜底。也称"转写""视频总结""拆视频"。
 ---
 
-# bbdigest — B站视频转写与深度总结
+# video-digest-skill — B站视频转写与深度总结
 
 把一个B站链接变成一份可速读的资料包：**带时间戳的转写全文 + 关键帧截图 + summary.md 深度总结**。
 
-本 skill 目录即工具目录：`bbdigest.py` 就在本文件旁边，产物输出到本目录的 `notes/` 下。
+本 skill 目录即工具目录：`video_digest_skill.py` 就在本文件旁边，产物输出到本目录的 `notes/` 下。
 
 ## 工作流程（收到链接后按此执行）
 
 ### 第 1 步：先看信息，再决定怎么跑
 
 ```bash
-python bbdigest.py info <链接|BV号|av号>
+python video_digest_skill.py info <链接|BV号|av号>
 ```
 
 输出标题/UP主/时长/分P清单。据此判断：
@@ -26,8 +26,8 @@ python bbdigest.py info <链接|BV号|av号>
 ### 第 2 步：跑转写+截帧
 
 ```bash
-python bbdigest.py run <链接>            # 单P视频
-python bbdigest.py run <链接> --pages 1,3-5   # 多P视频
+python video_digest_skill.py run <链接>            # 单P视频
+python video_digest_skill.py run <链接> --pages 1,3-5   # 多P视频
 ```
 
 **执行纪律（重要，都是踩过的坑）：**
