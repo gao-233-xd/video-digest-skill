@@ -1,0 +1,12 @@
+yt-dlp>=2024.10.0
+faster-whisper>=1.0.0
+# 版本钉子（2026-10 验证）:
+#   huggingface_hub 2.x/1.x 换用 httpx2 下载栈，在 hf-mirror.com 上解压 Brotli 会崩
+#   av 19 移除了 faster-whisper 依赖的 av.open(metadata_errors=...) 参数
+huggingface_hub<1.0
+av<19
+imagehash>=4.3.1
+requests>=2.31
+# GPU 转写加速: 提供 cuBLAS/cuDNN 动态库（Windows/Linux；macOS 自动跳过，走 CPU）
+nvidia-cublas-cu12; sys_platform == "win32" or sys_platform == "linux"
+nvidia-cudnn-cu12; sys_platform == "win32" or sys_platform == "linux"

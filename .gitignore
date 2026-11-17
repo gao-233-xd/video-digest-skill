@@ -1,0 +1,10 @@
+# 个人产物与凭据，绝不提交
+config.ini
+_cache/
+notes/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
